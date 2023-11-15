@@ -2,16 +2,18 @@
 
 /**
 * print_envn - prints the environment string to stdout
+*
 * Return: 0
 */
+
 void print_envn(void)
 {
 	int x = 0;
-	char **envn = environ;
+	char **env = environ;
 
-	while (envn[x])
+	while (env[x])
 	{
-		write(STDOUT_FILENO, (const void *)envn[x], _strlen(envn[x]));
+		write(STDOUT_FILENO, (const void *)env[x], _strlen(env[x]));
 		write(STDOUT_FILENO, "\n", 1);
 		x++;
 	}

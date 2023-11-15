@@ -12,7 +12,7 @@ void executing(char *ucp, char **cmd)
 {
 	pid_t child_pid;
 	int status;
-	char **envn = environ;
+	char **env = environ;
 
 	child_pid = fork();
 	if (child_pid < 0)
@@ -20,7 +20,7 @@ void executing(char *ucp, char **cmd)
 
 	if (child_pid == 0)
 	{
-		execve(ucp, cmd, envn);
+		execve(ucp, cmd, env);
 		perror(ucp);
 		free(ucp);
 		free_buffers(cmd);

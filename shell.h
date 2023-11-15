@@ -22,8 +22,8 @@ int checker(char **cmd, char *buff);
 void prompt_user(void);
 void handle_signal(int mm);
 char **tokenizer(char *line);
-char *test_path(char **the_path, char *user_command);
-char *append_path(char *the_path, char *user_command);
+char *test_path(char **path, char *user_command);
+char *appending_path(char *path, char *user_command);
 int handle_builtin(char **user_command, char *line);
 void exit_command(char **user_command, char *line);
 
@@ -44,7 +44,7 @@ void free_buffers(char **buff);
 
 struct builtin
 {
-	char *envn;
+	char *env;
 	char *exit;
 } builtin;
 
