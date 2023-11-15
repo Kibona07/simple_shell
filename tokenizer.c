@@ -6,17 +6,18 @@
 *
 * Return: array of strings
 */
+
 char **tokenizer(char *line)
 {
-	char *buf = NULL, *bufp = NULL, *token = NULL, *delim = " :\t\r\n";
+	char *buff = NULL, *bufp = NULL, *token = NULL, *delim = " :\t\r\n";
 	char **tokens = NULL;
 	int tokensize = 1;
 	size_t index = 0, flag = 0;
 
-	buf = _strdup(line);
-	if (!buf)
+	buff = _strdup(line);
+	if (!buff)
 		return (NULL);
-	bufp = buf;
+	bufp = buff;
 
 	while (*bufp)
 	{
@@ -30,7 +31,8 @@ char **tokenizer(char *line)
 		bufp++;
 	}
 	tokens = malloc(sizeof(char *) * (tokensize + 1));
-	token = strtok(buf, delim);
+	token = strtok(buff, delim);
+	
 	while (token)
 	{
 		tokens[index] = _strdup(token);
@@ -42,7 +44,8 @@ char **tokenizer(char *line)
 		token = strtok(NULL, delim);
 		index++;
 	}
+
 	tokens[index] = '\0';
-	free(buf);
+	free(buff);
 	return (tokens);
 }

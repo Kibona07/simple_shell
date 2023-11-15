@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- *handle_signal- it keeps track is interactive mode
- *@m: the signal number
- *Return: nothing
+ *handle_signal - keeps track that it is interactive mode
+ *@mm: the signal number
+ *Return: nothing to return
  */
 
-void handle_signal(int m)
+void handle_signal(int mm)
 {
-	(void)m;
+	(void)mm;
 	write(STDERR_FILENO, "\n", 1);
-	write(STDERR_FILENO, "$ ", 2);
+	write(STDERR_FILENO, "$", 2);
 }

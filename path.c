@@ -2,18 +2,18 @@
 
 /**
 * find_path - finds the path from the global enviroment
-* Return: NULL if path is not found or path if path is found.
+* Return: NULL whether path is not found or found.
 */
 char *find_path(void)
 {
 	int x;
-	char **env = environ, *path = NULL;
+	char **envn = environ, *path = NULL;
 
-	while (*env)
+	while (*envn)
 	{
-		if (_strncmp(*env, "PATH=", 5) == 0)
+		if (_strncmp(*envn, "PATH=", 5) == 0)
 		{
-			path = *env;
+			path = *envn;
 			while (*path && x < 5)
 			{
 				path++;
@@ -21,7 +21,7 @@ char *find_path(void)
 			}
 			return (path);
 		}
-		env++;
+		envn++;
 	}
 	return (NULL);
 }

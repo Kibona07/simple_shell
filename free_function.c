@@ -2,20 +2,22 @@
 
 /**
 * free_buffers - frees buffers
-* @buf: buffer to be freed
+* @buff: buffer to be freed
 *
 * Return: no return
 */
-void free_buffers(char **buf)
+
+void free_buffers(char **buff)
 {
 	int i = 0;
 
-	if (!buf || buf == NULL)
+	if (!buff || buff == NULL)
 		return;
-	while (buf[i])
+
+	while (buff[i])
 	{
-		free(buf[i]);
+		free(buff[i]);
 		i++;
 	}
-	free(buf);
+	free(buff);
 }

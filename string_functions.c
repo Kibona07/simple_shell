@@ -8,6 +8,7 @@
 * Return: returns difference between strings
 */
 int _strcmp(char *s1, char *s2)
+
 {
 	int i = 0, output;
 
@@ -26,6 +27,7 @@ int _strcmp(char *s1, char *s2)
 * Return: returns length of string passed
 */
 int _strlen(char *s)
+
 {
 	int count = 0;
 
@@ -63,6 +65,7 @@ int _strncmp(char *s1, char *s2, int n)
 *
 * Return: pointer to duplicate string
 */
+
 char *_strdup(char *s)
 {
 	char *ptr;
@@ -91,6 +94,7 @@ char *_strdup(char *s)
 * Return: returns pointer to first occurence of character
 * or NULL if character not found
 */
+
 char *_strchr(char *s, char c)
 {
 	while (*s)
@@ -99,6 +103,7 @@ char *_strchr(char *s, char c)
 			return (s);
 		s++;
 	}
+
 	if (!c)
 		return (s);
 	return (NULL);
