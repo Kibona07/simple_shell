@@ -5,7 +5,8 @@
 *
 * @the_path: path to command
 * @user_command: user entered command
-* Return: on success returns a buffer containing command with a path 
+*
+* Return: on success returns a buffer containing command with a path
 * NULL on failure
 */
 

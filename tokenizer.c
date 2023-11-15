@@ -32,7 +32,7 @@ char **tokenizer(char *line)
 	}
 	tokens = malloc(sizeof(char *) * (tokensize + 1));
 	token = strtok(buff, delim);
-	
+
 	while (token)
 	{
 		tokens[index] = _strdup(token);

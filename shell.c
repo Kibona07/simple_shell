@@ -34,16 +34,13 @@ int main(int ac, char **av, char *envp[])
 		if (line[linesize - 1] == '\n')
 			line[linesize - 1] = '\0';
 		user_command = tokenizer(line);
-
 		if (user_command == NULL || *user_command == NULL || **user_command == '\0')
 			continue;
-
 		if (checker(user_command, line))
 			continue;
 		the_path = find_path();
 		paths = tokenizer(the_path);
 		pathcommand = test_path(paths, user_command[0]);
-
 		if (!pathcommand)
 			perror(av[0]);
 		else

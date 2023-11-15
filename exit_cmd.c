@@ -2,7 +2,7 @@
 
 /**
 * exit_command - handles the exit command
-* @command: tokenized command
+* @user_command: tokenized command
 * @line: input read from stdin
 *
 * Return: no return
