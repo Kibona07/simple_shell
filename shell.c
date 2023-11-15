@@ -11,7 +11,7 @@
 
 int main(int ac, char **av, char *envp[])
 {
-	char *line = NULL, *pathcommand = NULL, *path = NULL;
+	char *line = NULL, *pathcommand = NULL, *the_path = NULL;
 	size_t bufsize = 0;
 	ssize_t linesize = 0;
 	char **user_command = NULL, **paths = NULL;
@@ -40,8 +40,8 @@ int main(int ac, char **av, char *envp[])
 
 		if (checker(user_command, line))
 			continue;
-		path = find_path();
-		paths = tokenizer(path);
+		the_path = find_path();
+		paths = tokenizer(the_path);
 		pathcommand = test_path(paths, user_command[0]);
 
 		if (!pathcommand)
